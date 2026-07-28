@@ -80,6 +80,8 @@ flowchart LR
 
 | 路径 | 你在这里学习什么 |
 |---|---|
+| `learning/LEARNING_RECORD.md` | 已审核通过的学习内容、分数与证据 |
+| `learning/LEARNING_PROCESS.md` | 学习中的问题、根因、补练和后续复核 |
 | `pm_agent/prompts.py` | Developer/User 角色、规则、步骤、JSON Schema、Prompt 版本 |
 | `pm_agent/rag.py` | 文档解析、Chunk、BM25、Top-K、元数据权限过滤 |
 | `pm_agent/model.py` | HTTP、Bearer 鉴权、Responses API、离线 Mock |
@@ -89,7 +91,28 @@ flowchart LR
 | `pm_agent/evaluation.py` | Golden Dataset、离线指标、回归测试 |
 | `knowledge/` | 带版本与权限元数据的教学知识库 |
 | `evals/golden.jsonl` | 问题—预期行为—禁止说法测试集 |
+| `docs/05_AI_AGENT_BOOK_CH1_MAP.md` | 指定教材第 1 章到学习单元、代码和审核题的映射 |
 | `docs/` | PRD、架构、学习路线与概念手册 |
+
+## 指定教材与学习档案
+
+整个教学过程都以 [《AI Agents in Depth》第 1 章](https://bojieli.github.io/ai-agent-book/book/chapter1/#agent)
+作为指定教材之一。先阅读原文，再用 `docs/05_AI_AGENT_BOOK_CH1_MAP.md` 把其中的 Agent
+组成、Context、Tool Calling、ReAct、Workflow、Harness、Guardrails 和评测思想映射到本项目。
+映射文档用于学习导航，不替代原文。
+
+学习档案遵循下面的闭环：
+
+```text
+开始单元 → 学习与动手 → 提交证据 → 审核
+                              ├─ 通过：更新学习记录 + 学习过程
+                              └─ 未通过：只更新学习过程，安排补练与复核
+```
+
+- `learning/LEARNING_RECORD.md` 只记录经过审核、达到标准的完成项，不能因为“看完了”就勾选。
+- `learning/LEARNING_PROCESS.md` 在每次单元审核后更新，记录问题、根因、纠正练习和变化趋势。
+- 审核采用 10 分制；总分至少 8 分，且“项目证据”和“边界与安全”不能为 0 分。
+- 每次档案更新都应提交并推送到 Git，使学习轨迹可追溯。
 
 ## 第一课：60 分钟动手，不要只看
 
@@ -144,9 +167,12 @@ python3 main.py analyze "客户对 Excel 导出有什么明确反馈？"
 
 1. `docs/01_PRD.md`：先定义问题与风险，不急着写 Agent。
 2. `docs/02_ARCHITECTURE.md`：理解为什么采用工作流骨架。
-3. `docs/03_LEARNING_ROADMAP.md`：完成 12 个里程碑。
-4. `docs/04_NEWBIE_HANDBOOK.md`：把概念映射回项目代码。
+3. 阅读[指定教材第 1 章](https://bojieli.github.io/ai-agent-book/book/chapter1/#agent)及
+   `docs/05_AI_AGENT_BOOK_CH1_MAP.md`。
+4. `docs/03_LEARNING_ROADMAP.md`：完成 12 个受审核的学习单元。
+5. `docs/04_NEWBIE_HANDBOOK.md`：把概念映射回项目代码。
+6. 每次开始前查看 `learning/LEARNING_RECORD.md` 和 `learning/LEARNING_PROCESS.md`。
 
-每个里程碑都要求一个可检查的产物。你下一次可以直接对 Codex 说：
+每个学习单元都要求一个可检查的产物。当前从 U01 开始，你下一次可以直接对 Codex 说：
 
-> 继续带我做 pm-agent-lab 的里程碑 1。先考我，不要直接给答案；我答完后再让我修改代码并跑评测。
+> 开始 U01。先带我学习指定教材和项目映射，再让我动手；完成后按学习记录中的标准审核我。
