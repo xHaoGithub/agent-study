@@ -5,7 +5,7 @@
 
 - 学习者：xHaoGithub
 - 课程：产品需求分析 Agent 从 0 到可评测原型
-- 当前阶段：准备开始 U01
+- 当前阶段：U01 学习中
 - 已审核通过：0 / 12
 - 最后更新：2026-07-28
 
@@ -41,7 +41,7 @@
 
 | ID | 学习单元 | 指定资料与项目证据 | 状态 | 分数 | 通过日期 |
 |---|---|---|---|---:|---|
-| U01 | Agent 系统地图 | 指定网页第 1 章；`docs/02_ARCHITECTURE.md` | 未开始 | — | — |
+| U01 | Agent 系统地图 | 指定网页第 1 章；`docs/02_ARCHITECTURE.md` | 学习中 | — | — |
 | U02 | 大模型基础 | `docs/04_NEWBIE_HANDBOOK.md` 第 1 节 | 未开始 | — | — |
 | U03 | 模型选型与 API | `pm_agent/model.py`、真实/Mock 对照 | 未开始 | — | — |
 | U04 | Prompt 与上下文工程 | `pm_agent/prompts.py`、Prompt 版本 | 未开始 | — | — |
